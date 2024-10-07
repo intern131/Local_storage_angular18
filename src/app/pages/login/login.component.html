@@ -1,0 +1,32 @@
+@if (isLoginView) {
+    <form>
+        <h3>Login</h3>
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" [(ngModel)]="userLogin.username">
+            <br><br>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="userLogin.password">
+            <br><br>
+            <button type="submit" (click)="onLogin()">Login</button>
+        </div>
+        <p>Don't have an account? <a  (click)="isLoginView = false">Register here</a></p>
+    </form>
+} @else {
+    <form>
+        <h3>Register</h3>
+        <div>
+            <label for="emailID">Email</label>
+            <input  type="email" id="email" name="emailId" [(ngModel)]="userRegisterObj.emailId">
+            <br><br>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" [(ngModel)]="userRegisterObj.username">
+            <br><br>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="userRegisterObj.password">
+            <br><br>
+            <button type="button" (click)="onRegister()">Register</button>
+        </div>
+        <p>Already have an account? <a  (click)="isLoginView = true">Login here</a></p>
+    </form>
+}
